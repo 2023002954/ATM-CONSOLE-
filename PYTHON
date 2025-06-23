@@ -1,0 +1,266 @@
+u1_accno = 1001
+u1_name = "Rohan Sharma"
+u1_dob = "24-08-2025"
+u1_pin = 2408
+u1_balance = 10000
+#Details of User 2
+u2_accno = 1002
+u2_name = "Priya Verma"
+u2_dob = "16-04-2025"
+u2_pin = 1234
+u2_balance = 20000
+#Details of User 3
+u3_accno = 1003
+u3_name = "Anil Kumar"
+u3_dob = "21-09-2025"
+u3_pin = None
+u3_balance = 10000
+#Operations
+print("Welcome !")
+print()
+while True:
+
+    print("1. Withdraw")
+    print("2. Deposit")
+    print("3. Pin Generation")
+    print("4. Mini Statement")
+    print("5. Exit")
+    print()
+    option = int(input("Choose Your Option: "))
+
+    if option == 5:
+        print("Thank You")
+        break
+    elif option == 4:
+        print("Mini Statement")
+        print()
+        accno = int(input("Enter Account Number: "))
+        pin = int(input("Enter Pin: "))
+        if accno == u1_accno:
+            if u1_pin is None:
+                print()
+                print("Pin Not Generated Yet !")
+                print()
+            elif pin == u1_pin:
+                print()
+                print("Account Details :")
+                print(f"Account Number: {u1_accno}")
+                print(f"Name: {u1_name}")
+                print(f"Date Of Birth: {u1_dob}")
+                print(f"Balance: {u1_balance}")
+                print()
+            else:
+                print()
+                print("Invalid Pin !")
+                print("Try again")
+                print()
+        elif accno == u2_accno:
+            if u2_pin is None:
+                print()
+                print("Pin Not Generated Yet !")
+                print()
+            elif pin == u2_pin:
+                print()
+                print("Account Details :")
+                print(f"Account Number: {u2_accno}")
+                print(f"Name: {u2_name}")
+                print(f"Date Of Birth: {u2_dob}")
+                print(f"Balance: {u2_balance}")
+                print()
+            else:
+                print()
+                print("Invalid Pin !")
+                print("Try again")
+                print()
+        elif accno == u3_accno:
+            if u3_pin is None:
+                print("Pin Not Generated Yet !")
+            elif pin == u3_pin:
+                print()
+                print("Account Details :")
+                print(f"Account Number: {u3_accno}")
+                print(f"Name: {u3_name}")
+                print(f"Date Of Birth: {u3_dob}")
+                print(f"Balance: {u3_balance}")
+                print()
+            else:
+                print()
+                print("Invalid Pin !")
+                print("Try again")
+                print()
+        else:
+            print()
+            print("Account Does not Exist !")
+            print()
+    elif option == 3:
+        print("Pin Generation")
+        print()
+        accno = int(input("Enter Account Number: "))
+        if accno == u1_accno:
+            if u1_pin is not None:
+                print()
+                print("Pin Already Generated !")
+                print()
+            else:
+                pin1 = int(input("Enter Pin: "))
+                while True:
+                    pin2 = int(input("Confim Pin: "))
+                    if pin1 == pin2:
+                        u1_pin = pin1
+                        print()
+                        print("Pin Generated Successfully !")
+                        print()
+                        break
+                    else:
+                        print()
+                        print("Confirm correct Pin !")
+                        print()
+                        
+
+        elif accno == u2_accno:
+            if u2_pin is not None:
+                print()
+                print("Pin Already Generated !")
+                print()
+            else:
+                pin1 = int(input("Enter Pin: "))
+                while True:
+                    pin2 = int(input("Confim Pin: "))
+                    if pin1 == pin2:
+                        u2_pin = pin1
+                        print()
+                        print("Pin Generated Successfully !")
+                        print()
+                        break
+                    else:
+                        print()
+                        print("Confirm correct Pin !")
+                        print()
+        elif accno == u3_accno:
+            if u3_pin is not None:
+                print()
+                print("Pin Already Generated !")
+                print()
+            else:
+                pin1 = int(input("Enter Pin: "))
+                while True:
+                    pin2 = int(input("Confim Pin: "))
+                    if pin1 == pin2:
+                        u3_pin = pin1
+                        print()
+                        print("Pin Generated Successfully !")
+                        print()
+                        break
+                    else:
+                        print()
+                        print("Confirm correct Pin !")
+                        print()
+        else:
+            print()
+            print("Account Does not Exist !")
+            print("Try Again")
+            print()
+    elif option == 2:
+        print("Deposit")
+        print()
+        accno = int(input("Enter Account Number: "))
+        if u1_accno == accno:
+            amount = int(input("Enter Amount to Deposit: "))
+            u1_balance += amount
+            print()
+            print("Deposit Successfull !")
+            print()
+        elif u2_accno == accno:
+            amount = int(input("Enter Amount to Deposit: "))
+            u2_balance += amount
+            print()
+            print("Deposit Successfull !")
+            print()
+        elif u3_accno == accno:
+            amount = int(input("Enter Amount to Deposit: "))
+            u3_balance += amount
+            print()
+            print("Deposit Successfull !")
+            print()
+        else:
+            print()
+            print("Account Number Does not Exist !")
+            print()
+    elif option == 1:
+        print("Withdrawl")
+        print()
+        accno = int(input("Enter Account Number: "))
+        if u1_accno == accno:
+            if u1_pin is None:
+                print()
+                print("Pin Not Yet Generated !")
+                print()
+            else:
+                pin = int(input("Enter Pin: "))
+                if pin == u1_pin:
+                    amount = int(input("Enter Amount: "))
+                    if amount <= u1_balance:
+                        u1_balance -= amount
+                        print()
+                        print("Withdrawl Successfull !")
+                        print()
+                    else:
+                        print()
+                        print("Insufficient Funds !")
+                        print()
+                else:
+                    print()
+                    print("Invalid Pin !")
+                    print()
+        elif u2_accno == accno:
+            if u2_pin is None:
+                print()
+                print("Pin Not Yet Generated !")
+                print()
+            else:
+                pin = int(input("Enter Pin: "))
+                if pin == u2_pin:
+                    amount = int(input("Enter Amount: "))
+                    if amount <= u2_balance:
+                        u2_balance -= amount
+                        print()
+                        print("Withdrawl Successfull !")
+                        print()
+                    else:
+                        print()
+                        print("Insufficient Funds !")
+                        print()
+                else:
+                    print()
+                    print("Invalid Pin !")
+                    print()
+        elif u3_accno == accno:
+            pin = int(input("Enter Pin: "))
+            if u3_pin is None:
+                print()
+                print("Pin Not Yet Generated !")
+                print()
+            else:
+                pin = int(input("Enter Pin: "))
+                if pin == u3_pin:
+                    amount = int(input("Enter Amount: "))
+                    if amount <= u3_balance:
+                        u3_balance -= amount
+                        print()
+                        print("Withdrawl Successfull !")
+                        print()
+                    else:
+                        print()
+                        print("Insufficient Funds !")
+                        print()
+                else:
+                    print()
+                    print("Invalid Pin !")
+                    print()
+        else:
+            print()
+            print("Acccount Does not Exist !")
+            print()
+    else:
+        print("Choose the correct Option")
+        print()
